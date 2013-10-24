@@ -1,8 +1,8 @@
-<div class="list">
-<h2>Study Sheet</h2>
+<%id = session[:user_id]%>
+<% user = User.find(id) %>
+<% list = user.words.all %>
 <ol>
-<% @list.each do |word| %>
-  <li><%= "#{word.name}: #{word.definition}" %><br><br></li>
+<% list.each do |word| %>
+  <li><%= "#{word.name}: #{word.definition}" %></li><br><br>
 <% end %>
 </ol>
-</div>

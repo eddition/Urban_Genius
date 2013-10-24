@@ -28,7 +28,7 @@ class WordsController < ApplicationController
     if match.include?(name) == false
       user.words << Word.where(name: name)
     end
-    @list = user.words
+    # @list = user.words
     render('list')
 
   end

@@ -9,7 +9,7 @@ class SessionController < ApplicationController
     @user = User.where(email: email).first
     if @user && @user.authenticate(password)
       session[:user_id] = @user.id
-      redirect_to '/search'
+      redirect_to '/'
     else
       flash.now.alert = "invalid email or password"
       render :new
