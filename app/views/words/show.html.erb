@@ -1,0 +1,8 @@
+<%=@word.capitalize%><br>
+<%=@definition%>
+
+<%= form_for(Word.new) do |f| %>
+<%=f.hidden_field :name, value: @word%>
+<%=f.hidden_field :definition, value: @definition%>
+<%=f.submit%>
+<%end%>

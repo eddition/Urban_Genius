@@ -1,0 +1,13 @@
+<%= "#{@track.title} written by #{@track.artist}" %>
+<br>
+<br>
+<% @track.annotations.each do |line| %>
+  <% line.lyric.split(/ /).each do |word| %>
+    <% if @stop_words.include?(word.downcase)%>
+       <%=word%>
+    <%else%>
+    <%=link_to "#{word}", controller: "words", action: "index", name: "#{word}"%>
+    <% end %>
+  <% end %>
+<% end %>
+
