@@ -12,11 +12,18 @@
   <header>
     <div class="grid">
       <div class ="unit one-quarter">
-        <h1>Urban Genius</h1>
+        <a href="/"><h1>Urban Genius</h1></a>
       </div>
       <div class="unit three-quarters">
         <nav>
           <% if current_user %>
+          <%= form_tag('/songs') do %>
+            <%= label_tag :artist %>
+            <%= text_field_tag :artist %>
+            <%= label_tag :title %>
+            <%= text_field_tag :title %>
+            <%= submit_tag "Search" %>
+          <% end %><br>
           Logged in as <%= current_user.email %>
           | <%= link_to "Search", '/search' %>| <%= link_to "Log out", '/logout' %>
           <% else %>

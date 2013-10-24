@@ -4,10 +4,12 @@
 <% @track.annotations.each do |line| %>
   <% line.lyric.split(/ /).each do |word| %>
     <% if @stop_words.include?(word.downcase)%>
-       <%=word%>
+       <%= word %>
     <%else%>
-    <%=link_to "#{word}", controller: "words", action: "index", name: "#{word}"%>
+    <% new_word = word.gsub(/[^a-zA-Z0-9 -]/,"")%>
+    <%=link_to "#{word}", controller: "words", action: "index", name: "#{new_word}"%>
     <% end %>
   <% end %>
 <% end %>
+
 
