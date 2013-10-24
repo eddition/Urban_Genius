@@ -14,22 +14,23 @@
       <div class ="unit one-quarter">
         <h1>Urban Genius</h1>
       </div>
-      <div class="user_nav">
-        <% if current_user %>
-        Logged in as <%= current_user.email %>
-        | <%= link_to "Search", '/search' %>| <%= link_to "Log out", '/logout' %>
-        <% else %>
-        <%= link_to "Sign up", '/signup' %> | <%= link_to "Log in", '/login' %>
-        <% end %>
+      <div class="unit three-quarters">
+        <nav>
+          <% if current_user %>
+          Logged in as <%= current_user.email %>
+          | <%= link_to "Search", '/search' %>| <%= link_to "Log out", '/logout' %>
+          <% else %>
+          <%= link_to "Sign up", '/signup' %> | <%= link_to "Log in", '/login' %>
+          <% end %>
+        </nav>
       </div>
     </div>
   </header>
-
-  <%flash.each do |name, msg| %>
-  <%= content_tag :div, msg, :id => "flash_#{name}" %>
-  <% end %>
-
-  <%= yield %>
-
+  <div class="wrap grid">
+    <%flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
+    <%= yield %>
+  </div>
 </body>
 </html>

@@ -20,13 +20,15 @@ class WordsController < ApplicationController
     word = params[:word]
     name = word[:name]
     definition = word[:definition]
-
-    if Word.Song.find_or_name_by_definition(name, definition) == false
-      Word.create(name: name, definition: definition)
-      user.words << Word.last
+    Word.find_or_create_by_name_and_definition(name, definition)
+    match = []
+    user.words.each do |word|
+       match << word.name
     end
-
-    @list = @user.words
+    if match.include?(name) == false
+      user.words << Word.where(name: name)
+    end
+    @list = user.words
     render('list')
 
   end

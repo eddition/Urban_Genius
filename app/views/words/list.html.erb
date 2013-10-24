@@ -1,4 +1,9 @@
+<div class="list">
+<h2>Study Sheet</h2>
+<ol>
 <% @list.each do |word| %>
-  <%= "#{word.name}: #{word.definition}" %><br>
+  <li><%= "#{word.name}: #{word.definition}" %><br><br></li>
   raise
 <% end %>
+</ol>
+</div>

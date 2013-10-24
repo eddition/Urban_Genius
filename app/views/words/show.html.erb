@@ -1,5 +1,4 @@
-<%=@word.capitalize%><br>
-<%=@definition%>
+<%=@word.capitalize%>: <%=@definition%>
 
 <%= form_for(Word.new) do |f| %>
 <%=f.hidden_field :name, value: @word%>

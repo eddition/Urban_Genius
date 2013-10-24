@@ -1,3 +1,6 @@
+<div class = "container">
+<h2>Search for a Rap Song</h2>
+<h6>Artist, Title, or Both</h6>
 <%= form_tag('/songs') do %>
   <%= label_tag :artist %>
   <%= text_field_tag :artist %>
@@ -5,3 +8,5 @@
   <%= text_field_tag :title %>
   <%= submit_tag "Search" %>
 <% end %>
+<br>
+</div>
