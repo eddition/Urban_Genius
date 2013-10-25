@@ -14,21 +14,33 @@
       <div class ="unit one-quarter">
         <a href="/"><h1>Urban Genius</h1></a>
       </div>
+
       <div class="unit three-quarters">
-        <nav>
-          <% if current_user %>
+
+        <% if current_user %>
+
+        <div class = "form">
+
           <%= form_tag('/songs') do %>
-            <%= label_tag :artist %>
-            <%= text_field_tag :artist %>
-            <%= label_tag :title %>
-            <%= text_field_tag :title%>
-            <%= submit_tag "Search" %>
-          <% end %><br>
-          Logged in as <%= current_user.email %>
-          | <%= link_to "Study Sheet", '/list' %>| <%= link_to "Log out", '/logout' %>
-          <% else %>
-          <%= link_to "Sign up", '/signup' %> | <%= link_to "Log in", '/login' %>
+          <%= label_tag :artist %>
+          <%= text_field_tag :artist %>
+          <%= label_tag :title %>
+          <%= text_field_tag :title%>
+          <%= submit_tag "Search" %>
           <% end %>
+
+        </div>
+        <nav>
+
+          <div class ="direct">
+            Logged in as <%= current_user.email %>
+            | <%= link_to "Study Sheet", '/list' %>| <%= link_to "Log out", '/logout' %>
+            <% else %>
+            <div class="logged-out">
+            <%= link_to "Sign up", '/signup' %> | <%= link_to "Log in", '/login' %>
+            </div>
+            <% end %>
+          </div>
         </nav>
       </div>
     </div>

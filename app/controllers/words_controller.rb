@@ -5,9 +5,13 @@ class WordsController < ApplicationController
     @word = params[:name]
     url = "http://api.urbandictionary.com/v0/define?term=#{@word}"
     response = HTTParty.get(url)
-    @definition = response.to_hash["list"][0]["definition"]
-
-    render('show')
+    if response["result_type"] == "no_results"
+      flash[:alert] = "Word not found in Urban Dictionary "
+      redirect_to :back
+    else
+      @definition = response.to_hash["list"][0]["definition"]
+      render('show')
+    end
   end
 
   def show
@@ -23,11 +27,11 @@ class WordsController < ApplicationController
     Word.find_or_create_by_name_and_definition(name, definition)
     match = []
     user.words.each do |word|
-       match << word.name
-    end
-    if match.include?(name) == false
-      user.words << Word.where(name: name)
-    end
+     match << word.name
+   end
+   if match.include?(name) == false
+    user.words << Word.where(name: name)
+  end
     # @list = user.words
     render('list')
 

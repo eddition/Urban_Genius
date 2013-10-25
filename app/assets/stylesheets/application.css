@@ -31,10 +31,22 @@ header h1 {
 nav {
   float: right;
   margin-top: 30px;
+  font-size: 0.5em;
 }
 
+.form {
+  float: left;
+  padding-top: 30px
+}
+.logged-out {
+  text-align: right;
+  line-height: 93px;
+}
 .container {
   text-align: center;
+}
+.left_container {
+  padding: 15px;
 }
 
 ul {
