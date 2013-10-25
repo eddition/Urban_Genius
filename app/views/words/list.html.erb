@@ -3,6 +3,6 @@
 <% list = user.words.all %>
 <ol>
 <% list.each do |word| %>
-  <li><%= "#{word.name}: #{word.definition}" %></li><br><br>
+  <li><%= "#{word.name.capitalize}: #{word.definition}" %></li><br>
 <% end %>
 </ol>
