@@ -44,9 +44,11 @@ nav {
 }
 .container {
   text-align: center;
+  font-family: 'Coda', cursive;
 }
 .left_container {
   padding: 15px;
+  font-family: 'Coda', cursive;
 }
 
 ul {
