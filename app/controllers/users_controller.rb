@@ -12,9 +12,9 @@ class UsersController < ApplicationController
     end
   end
 
-def show
-  user = User.find(session[:user_id])
-  @list = user.words
-end
+  def show
+    user = User.find(session[:user_id])
+    @list = user.words
+  end
 
 end
