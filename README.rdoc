@@ -1,3 +1,12 @@
 Urban Genius
 
 Urban Genius allows users to be able to search for hip hop lyrics and learn the vocabulary used by the artists. The app uses the 'rapgenius' gem to scrape through rapgenius.com. Once scraped, we iterate over all the words and send them through the Urban Dictionary API.Look up new words and store them to your study sheet. Never be lost again when listening to your favorite hip hop songs!
+
+checkout urbangenius.herokuapp.com
+
+Technologies used in creating this project are the following:
+* Ruby on Rails
+* HTML5
+* CSS
+* Gridism (CSS Framework)
+* PostgreSQL
